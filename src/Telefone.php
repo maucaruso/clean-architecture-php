@@ -9,9 +9,30 @@ class Telefone
   
   public function __construct(string $ddd, string $numero)
   {
-    $this->ddd = $ddd;
-    $this->numero = $numero;
+    $this->setDdd($ddd);
+    $this->setNumero($numero);
+  }
+  
+  private function setDdd(string $ddd): void
+  {
+    if (preg_match('/\d{2}/', $ddd) !== 1) {
+      throw new \InvalidArgumentException('DDD inválido');
+    }
     
-    // criar setddd e setnumero, garantir que dd tenha somente 2 numeros e que o numero seja numerico e tenha apenas 8 caracteres
+    $this->ddd = $ddd;
+  }
+  
+  private function setNumero(string $numero): void
+  {
+    if (preg_match('/\d{8,9}/', $numero) !== 1) {
+      throw new \InvalidArgumentException('Número de telefone inválido.');
+    }
+    
+    $this->numero = $numero;
+  }
+  
+  public function __toString(): string
+  {
+    return "({$this->ddd}) {$this->numero}";
   }
 }
