@@ -2,7 +2,7 @@
 
 namespace PHP\Architecture\Tests;
 
-use PHP\Architecture\Telefone;
+use PHP\Architecture\Dominio\Aluno\Telefone;
 use PHPUnit\Framework\TestCase;
 
 class TelefoneTest extends TestCase

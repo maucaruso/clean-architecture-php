@@ -2,7 +2,7 @@
 
 namespace PHP\Architecture\Tests;
 
-use PHP\Architecture\CPF;
+use PHP\Architecture\Dominio\CPF;
 use PHPUnit\Framework\TestCase;
 
 class CpfTest extends TestCase
