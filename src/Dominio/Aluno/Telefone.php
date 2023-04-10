@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Architecture\Aluno;
+namespace PHP\Architecture\Dominio\Aluno;
 
 class Telefone
 {

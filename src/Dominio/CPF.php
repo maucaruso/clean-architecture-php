@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Architecture;
+namespace PHP\Architecture\Dominio;
 
 class CPF
 {
