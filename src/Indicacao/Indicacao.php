@@ -1,6 +1,8 @@
 <?php
 
-namespace PHP\Architecture;
+namespace PHP\Architecture\Indicacao;
+
+use PHP\Architecture\Aluno\Aluno;
 
 class Indicacao
 {

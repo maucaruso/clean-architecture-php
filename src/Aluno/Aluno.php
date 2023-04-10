@@ -1,6 +1,8 @@
 <?php
 
-namespace PHP\Architecture;
+namespace PHP\Architecture\Aluno;
+
+use PHP\Architecture\{CPF, Email};
 
 class Aluno
 {
