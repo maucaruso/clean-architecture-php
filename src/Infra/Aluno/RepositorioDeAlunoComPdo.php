@@ -71,6 +71,29 @@ class RepositorioDeAlunoComPdo implements RepositorioDeAluno
   }
 
   public function buscarTodos(): array {
+    $sql = '
+      SELECT cpf, nome, email, ddd, numero as numero_telefone
+      FROM alunos
+      LEFT JOIN telefones ON telefones.cpf_aluno = alunos.cpf;
+    ';
     
+    $stmt = $this->conexao->query($sql);
+    
+    $listaDadosAlunos = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    $alunos = [];
+    
+    foreach ($listaDadosAlunos as $dadosAluno) {
+      if (!array_key_exists($dadosAluno['cpf'], $alunos)) {
+        $alunos[$dadosAluno['cpf']] = Aluno::comCpfNomeEEmail(
+          $dadosAluno['cpf'],
+          $dadosAluno['nome'],
+          $dadosAluno['email']
+        );
+        
+        $alunos[$dadosAluno['cpf']]->adicionarTelefone($dadosAluno['ddd'], $dadosAluno['numero_telefone']);
+      }
+    }
+    
+    return array_values($alunos);
   }
 }
