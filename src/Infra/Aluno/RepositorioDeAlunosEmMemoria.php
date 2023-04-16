@@ -23,7 +23,7 @@ class RepositorioDeAlunosEmMemoria implements RepositorioDeAluno
       throw new AlunoNaoEncontrado($cpf);
     }
     
-    if (count($alunosFiltrados) > 0) {
+    if (count($alunosFiltrados) > 1) {
       throw new \Exception("Existe mais de um aluno cadastrado com este mesmo CPF.");
     }
     

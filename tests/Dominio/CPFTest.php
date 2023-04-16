@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Architecture\Tests;
+namespace PHP\Architecture\Tests\Dominio;
 
 use PHP\Architecture\Dominio\CPF;
 use PHPUnit\Framework\TestCase;
