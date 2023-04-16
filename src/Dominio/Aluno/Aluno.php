@@ -50,5 +50,3 @@ class Aluno
     return $this->telefones;
   }
 }
-
-Aluno::comCpfNomeEEmail('123123', '123123', '123123')->adicionarTelefone('123123123', 123123);
