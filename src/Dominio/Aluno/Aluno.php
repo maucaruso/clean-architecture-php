@@ -11,7 +11,7 @@ class Aluno
   private Email $email;
   private array $telefones;
   
-  private function __construct(Cpf $cpf, string $nome, Email $email)
+  public function __construct(Cpf $cpf, string $nome, Email $email)
   {
     $this->cpf = $cpf;
     $this->nome = $nome;
@@ -24,9 +24,14 @@ class Aluno
     return new Aluno(new Cpf($cpf), $nome, new Email($email));
   }
   
-  public function adicionarTelefone(string $ddd, string $numero)
+  public function adicionarTelefone(string $ddd, string $numero): self
   {
+    if (count($this->telefones) === 2) {
+      throw new \DomainException("Aluno já tem 2 telefones, não é possível adicionar outro.");
+    }
+    
     $this->telefones[] = new Telefone($ddd, $numero);
+    
     return $this;
   }
   
