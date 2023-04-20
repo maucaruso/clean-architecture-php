@@ -2,7 +2,7 @@
 
 namespace PHP\Architecture\Gamificacao\Dominio\Selo;
 
-use PHP\Architecture\Dominio\CPF;
+use PHP\Architecture\Shared\Dominio\CPF;
 
 class Selo
 {

@@ -2,8 +2,8 @@
 
 namespace PHP\Architecture\Academico\Dominio\Aluno;
 
-use PHP\Architecture\Academico\Dominio\Evento;
-use PHP\Architecture\Academico\Dominio\OuvinteDeEvento;
+use PHP\Architecture\Shared\Dominio\Evento\Evento;
+use PHP\Architecture\Shared\Dominio\Evento\OuvinteDeEvento;
 
 class LogDeAlunoMatriculado extends OuvinteDeEvento
 {
@@ -22,6 +22,6 @@ class LogDeAlunoMatriculado extends OuvinteDeEvento
   }
   
   public function sabeProcessar(Evento $evento): bool {
-    return $evento instanceof AlunoMatriculado;
+    return $evento->nome() === "aluno_matriculado";
   }
 }

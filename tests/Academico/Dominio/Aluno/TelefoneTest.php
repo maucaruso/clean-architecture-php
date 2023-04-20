@@ -1,8 +1,8 @@
 <?php
 
-namespace PHP\Architecture\Tests\Dominio\Aluno;
+namespace PHP\Architecture\Tests\Academico\Dominio\Aluno;
 
-use PHP\Architecture\Dominio\Aluno\Telefone;
+use PHP\Architecture\Academico\Dominio\Aluno\Telefone;
 use PHPUnit\Framework\TestCase;
 
 class TelefoneTest extends TestCase

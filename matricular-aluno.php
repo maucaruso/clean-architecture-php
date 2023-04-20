@@ -1,11 +1,12 @@
 <?php
 
-use PHP\Architecture\Aplicacao\Aluno\MatricularAluno\MatricularAluno;
-use PHP\Architecture\Aplicacao\Aluno\MatricularAluno\MatricularAlunoDto;
-use PHP\Architecture\Dominio\Aluno\Aluno;
-use PHP\Architecture\Dominio\Aluno\LogDeAlunoMatriculado;
-use PHP\Architecture\Dominio\PublicadorDeEvento;
-use PHP\Architecture\Infra\Aluno\RepositorioDeAlunosEmMemoria;
+use PHP\Architecture\Academico\Aplicacao\Aluno\MatricularAluno\MatricularAluno;
+use PHP\Architecture\Academico\Aplicacao\Aluno\MatricularAluno\MatricularAlunoDto;
+use PHP\Architecture\Academico\Dominio\Aluno\LogDeAlunoMatriculado;
+use PHP\Architecture\Academico\Infra\Aluno\RepositorioDeAlunosEmMemoria;
+use PHP\Architecture\Gamificacao\Aplicacao\GeraSeloDeNovato;
+use PHP\Architecture\Gamificacao\Infra\Selo\RepositorioDeSeloEmMemoria;
+use PHP\Architecture\Shared\Dominio\Evento\PublicadorDeEvento;
 
 require 'vendor/autoload.php';
 
@@ -17,6 +18,8 @@ $email = $argv[3];
 
 $publicador = new PublicadorDeEvento();
 $publicador->adicionarOuvinte(new LogDeAlunoMatriculado());
+$publicador->adicionarOuvinte(new GeraSeloDeNovato(new RepositorioDeSeloEmMemoria()));
+
 $useCase = new MatricularAluno(new RepositorioDeAlunosEmMemoria(), $publicador);
 
 $useCase->executa(new MatricularAlunoDto($cpf, $nome, $email));

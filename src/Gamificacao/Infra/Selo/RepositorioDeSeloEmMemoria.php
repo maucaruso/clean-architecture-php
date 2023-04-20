@@ -2,9 +2,9 @@
 
 namespace PHP\Architecture\Gamificacao\Infra\Selo;
 
-use PHP\Architecture\Dominio\CPF;
-use PHP\Architecture\Dominio\Selo\RepositorioDeSelo;
-use PHP\Architecture\Dominio\Selo\Selo;
+use PHP\Architecture\Shared\Dominio\CPF;
+use PHP\Architecture\Gamificacao\Dominio\Selo\RepositorioDeSelo;
+use PHP\Architecture\Gamificacao\Dominio\Selo\Selo;
 
 class RepositorioDeSeloEmMemoria implements RepositorioDeSelo
 {

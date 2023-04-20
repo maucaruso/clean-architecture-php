@@ -6,7 +6,7 @@ use PHP\Architecture\Academico\Dominio\Aluno\Aluno;
 use PHP\Architecture\Academico\Dominio\Aluno\AlunoMatriculado;
 use PHP\Architecture\Academico\Dominio\Aluno\LogDeAlunoMatriculado;
 use PHP\Architecture\Academico\Dominio\Aluno\RepositorioDeAluno;
-use PHP\Architecture\Academico\Dominio\PublicadorDeEvento;
+use PHP\Architecture\Shared\Dominio\Evento\PublicadorDeEvento;
 
 class MatricularAluno
 {

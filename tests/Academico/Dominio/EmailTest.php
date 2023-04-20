@@ -1,8 +1,8 @@
 <?php
 
-namespace PHP\Architecture\Tests\Dominio;
+namespace PHP\Architecture\Tests\Academico\Dominio;
 
-use PHP\Architecture\Dominio\Email;
+use PHP\Architecture\Academico\Dominio\Email;
 use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase

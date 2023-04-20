@@ -1,8 +1,8 @@
 <?php
 
-namespace PHP\Architecture\Tests\Dominio;
+namespace PHP\Architecture\Tests\Shared\Dominio;
 
-use PHP\Architecture\Dominio\CPF;
+use PHP\Architecture\Shared\Dominio\CPF;
 use PHPUnit\Framework\TestCase;
 
 class CpfTest extends TestCase
@@ -15,7 +15,7 @@ class CpfTest extends TestCase
 
   public function testCpfDevePoderSerRepresentadoComoString()
   {
-    $cpf = new CPF('123.456.789-10');
-    $this->assertSame('123.456.789-10', (string) $cpf);
+    $cpf = new CPF('132.456.789-10');
+    $this->assertSame('132.456.789-10', (string) $cpf);
   }
 }

@@ -5,7 +5,7 @@ namespace PHP\Architecture\Academico\Infra\Aluno;
 use PHP\Architecture\Academico\Dominio\Aluno\Aluno;
 use PHP\Architecture\Academico\Dominio\Aluno\AlunoNaoEncontrado;
 use PHP\Architecture\Academico\Dominio\Aluno\RepositorioDeAluno;
-use PHP\Architecture\Academico\Dominio\CPF;
+use PHP\Architecture\Shared\Dominio\CPF;
 
 class RepositorioDeAlunoComPdo implements RepositorioDeAluno
 {

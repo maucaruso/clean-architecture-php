@@ -2,8 +2,8 @@
 
 namespace PHP\Architecture\Academico\Dominio\Aluno;
 
-use PHP\Architecture\Academico\Dominio\CPF;
-use PHP\Architecture\Academico\Dominio\Evento;
+use PHP\Architecture\Shared\Dominio\CPF;
+use PHP\Architecture\Shared\Dominio\Evento\Evento;
 
 class AlunoMatriculado implements Evento
 {
@@ -24,5 +24,14 @@ class AlunoMatriculado implements Evento
   public function momento(): \DateTimeImmutable
   {
     return $this->momento;
+  }
+  
+  public function nome(): string {
+    return "aluno_matriculado";
+  }
+  
+  public function jsonSerialize(): mixed 
+  {
+    return get_object_vars($this);
   }
 }

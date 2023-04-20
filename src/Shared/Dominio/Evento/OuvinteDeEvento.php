@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Architecture\Academico\Dominio;
+namespace PHP\Architecture\Shared\Dominio\Evento;
 
 abstract class OuvinteDeEvento
 {

@@ -2,7 +2,8 @@
 
 namespace PHP\Architecture\Academico\Dominio\Aluno;
 
-use PHP\Architecture\Dominio\{CPF, Email};
+use PHP\Architecture\Academico\Dominio\Email;
+use PHP\Architecture\Shared\Dominio\CPF;
 
 class Aluno
 {
@@ -11,7 +12,7 @@ class Aluno
   private Email $email;
   private array $telefones;
   
-  public function __construct(Cpf $cpf, string $nome, Email $email)
+  public function __construct(CPF $cpf, string $nome, Email $email)
   {
     $this->cpf = $cpf;
     $this->nome = $nome;
@@ -21,7 +22,7 @@ class Aluno
   
   public static function comCpfNomeEEmail(string $cpf, string $nome, string $email): self
   {
-    return new Aluno(new Cpf($cpf), $nome, new Email($email));
+    return new Aluno(new CPF($cpf), $nome, new Email($email));
   }
   
   public function adicionarTelefone(string $ddd, string $numero): self
@@ -35,7 +36,7 @@ class Aluno
     return $this;
   }
   
-  public function cpf(): string
+  public function cpf(): CPF
   {
     return $this->cpf;
   }
